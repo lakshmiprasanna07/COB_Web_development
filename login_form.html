@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body{
+            background-color: floralwhite;
+        }
+        .main{
+            align-items: center;
+            border: 2px solid rgb(54, 199, 215);
+            border-radius: 9px;
+            margin-top: 200px;
+            margin-bottom: 100px;
+            margin-right: 500px;
+            margin-left: 500px;
+            padding-bottom: 50px;
+            padding-top: 30px;
+            background-color: lightblue;
+        }
+        .login{
+            text-align: center;
+            padding-bottom: 9px;
+        }
+        .inp input{
+            margin: 8px;
+        }
+        .forget_password{
+            color: rgb(69, 69, 205);
+            margin-top: 5px;
+            font-size: 14px;
+            padding-left: 125px;
+        }
+        .submit {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+            <div class="login">
+                <h2>Login</h2>
+            </div>
+            <div class="inp">
+                <label for="mail" style="padding-left:125px">Username: <span style="color: red;">*</span></label>
+                <input type="text" id="mail" name="mail" required><br>
+                <label for="password" style="padding-left: 125px;"> Password   : <span style="color: red;">*</span></label>
+                <input type="password" id="password" name="password" required minlength="6"><br>
+            </div>
+            <div class="forget_password">
+                <ins><i>Forgot Password?</i></ins><br>
+            </div><br>
+            <div class="submit">
+                <label for="submit" ></label>
+                <input type="submit" id="submit" value="Login" style="width: 265px; background-color:rgb(65, 111, 237); color:floralwhite">
+            </div><br>
+            <div class="sign" style="text-align: center;">
+                <i style="font-size: 14px; ">Not A Member ? </i><span style="color: rgb(69, 69, 205);"> Sign up</span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
