@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meter To Feet</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(to right,rgb(5, 5, 6),rgb(16, 16, 78));
+            margin-top: 210px;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 24px;
+        }
+        h1{
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Meter to Feet</h1>
+    <div class="container">
+        <input type="number" id="inputLength" placeholder="Enter length in meters" oninput="convertLength()">
+        <br>
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function convertLength() {
+            // Get the value entered by the user
+            const meters = parseFloat(document.getElementById("inputLength").value);
+            
+            // Check if the input is a valid number
+            if (!isNaN(meters)) {
+                // Convert meters to feet (1 meter = 3.28084 feet)
+                const feet = meters * 3.28084;
+                document.getElementById("result").textContent = meters + " meters = " + feet.toFixed(2) + " feet";
+            } else {
+                document.getElementById("result").textContent = "Please enter a valid number";
+            }
+        }
+    </script>
+</body>
+</html>

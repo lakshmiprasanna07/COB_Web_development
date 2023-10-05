@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inches to Meters</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(to right,rgb(5, 5, 6),rgb(16, 16, 78));
+            margin-top: 210px;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 24px;
+        }
+        h1{
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Inches to Meters</h1>
+    <div class="container">
+        <input type="number" id="inputInches" placeholder="Enter length in inches" oninput="convertInchesToMeters()">
+        <br>
+        <span id="result"></span>
+    </div>
+
+    <script>
+        function convertInchesToMeters() {
+            // Get the value entered by the user
+            const inches = parseFloat(document.getElementById("inputInches").value);
+            
+            // Check if the input is a valid number
+            if (!isNaN(inches)) {
+                // Convert inches to meters (1 inch = 0.0254 meters)
+                const meters = inches * 0.0254;
+                document.getElementById("result").textContent = inches + " inches = " + meters.toFixed(2) + " meters";
+            } else {
+                document.getElementById("result").textContent = "Please enter a valid number";
+            }
+        }
+    </script>
+</body>
+</html>

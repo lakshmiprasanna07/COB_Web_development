@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pound to Gram</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(to right,rgb(5, 5, 6),rgb(16, 16, 78));
+            margin-top: 210px;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 24px;
+            margin-top: -1px;
+        }
+        h1{
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            text-decoration: underline;
+        }
+        #poundInput{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Pound to Gram</h1>
+        <label for="poundInput"></label>
+        <input type="number" id="poundInput" placeholder="Enter pounds" oninput="convertPoundsToGrams()">
+        <p id="result"></p>
+    </div>
+    <script>
+        function convertPoundsToGrams() {
+            const poundInput = document.getElementById("poundInput");
+            const resultElement = document.getElementById("result");
+            const pounds = parseFloat(poundInput.value);
+            if (!isNaN(pounds)) {
+            const grams = pounds * 453.592; 
+            resultElement.textContent = `${pounds} pounds = ${grams.toFixed(2)} grams.`;
+            }
+            else{
+                document.getElementById("result").textContent = "Please enter a valid number";
+            }
+        }
+        
+    </script>
+</body>
+</html>

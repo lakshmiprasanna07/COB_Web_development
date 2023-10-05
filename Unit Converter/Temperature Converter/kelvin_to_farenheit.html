@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kelvin to Fahrenheit</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(to right,rgb(5, 5, 6),rgb(16, 16, 78));
+            margin-top: 210px;
+            color: white;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            font-size: 24px;
+        }
+        h1{
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            text-decoration: underline;
+        }
+        #kelvinInput{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Kelvin to Fahrenheit</h1>
+        <label for="kelvinInput"></label>
+        <input type="number" id="kelvinInput" placeholder="Enter Kelvin" oninput="convertKelvinToFahrenheit()">
+        <p id="result"></p>
+    </div>
+    <script>
+        function convertKelvinToFahrenheit() {
+            const kelvinInput = document.getElementById("kelvinInput");
+            const resultElement = document.getElementById("result");
+
+            const kelvin = parseFloat(kelvinInput.value);
+            if (!isNaN(kelvin)) {
+            const fahrenheit = ((kelvin - 273.15) * 9/5) + 32;
+
+            resultElement.textContent = `${kelvin} Kelvin = ${fahrenheit.toFixed(2)} degree Fahrenheit.`;
+            }
+            else {
+                document.getElementById("result").textContent = "Please enter a valid number";
+            }
+        }
+        
+    </script>
+</body>
+</html>
